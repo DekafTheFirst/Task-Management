@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.btn-primary {
+    @apply border border-gray-300 bg-white rounded-md shadow-sm items-center text-gray-600 cursor-pointer; 
+}
+
+.btn-secondary {
+    @apply border border-gray-300 bg-white rounded-md shadow-sm items-center text-gray-600 hover:border-gray-500 cursor-pointer;
+}
+
+.icon-size {
+    @apply text-base;
+  }

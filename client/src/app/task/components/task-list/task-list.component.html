@@ -1,0 +1,28 @@
+<div class="flex justify-center items-center">
+	<input type="text"
+	name="name"
+	id="name"
+	[(ngModel)] = "input"
+	placeholder="search task"
+	class="rounded-xl m-5 w-[500px] border-2 border-slate-300 h-9 p-3 cursor-pointer bg-slate-200 shadow-lg focus:outline-none focus:border-white"
+	>
+	<div>
+		<button (click)="gotoSearchResult(input)" class=" border-2 border-solid border-orange-400 hover:bg-orange-200 h-9 px-5 shadow-lg rounded-xl flex justify-center items-center">
+			search</button>
+	</div>
+	
+</div>
+
+<div>
+<div class="mx-5 font[Poppins] w-6/12">
+	<select class="w-[490px] border-2 bg-slate-400 h-11 p-2 cursor-pointer" [(ngModel)] = "selectedValue" >
+		<option value="TODO">TODO</option>
+		<option value="INPROGRESS">INPROGRESS</option>
+		<option value="COMPLETED">COMPLETED</option>
+	</select>
+	<button (click)="gotoStatus(selectedValue)" class=" border-2 border-solid border-amber-400 hover:bg-amber-200 px-9 py-2 shadow-md">Filter</button>
+	<button (click)="gotoPriority()" class=" border-2 border-solid border-amber-400 hover:bg-amber-200 px-9 py-2 shadow-md">Order</button>
+</div>
+
+<app-task-table [tasks] = "tasks"></app-task-table>
+</div>

@@ -1,0 +1,25 @@
+<h2 class="text-4xl font-bold text-center">User List</h2>
+
+<table class="min-w-full divide-y divide-gray-200 table-auto">
+	<thead>
+		<tr>
+			<th  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name</th>
+			<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name</th>
+			<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+			<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let user of users" class="bg-slate-300">
+			<td class="px-6 py-4 whitespace-nowrap">{{user.firstname}}</td>
+			<td class="px-6 py-4 whitespace-nowrap">{{user.lastname}}</td>
+			<td class="px-6 py-4 whitespace-nowrap">{{user.email}}</td>
+			<td class="px-6 py-4 whitespace-nowrap">
+				<button (click)="viewUser(user.id)" class="mx-3 my-4 px-4 py-2 bg-blue-400 text-slate-50 rounded shadow-md">view</button>
+				<button (click)="updateUser(user.id)" class="mx-3 my-4 px-4 py-2 bg-green-400 text-slate-50 rounded shadow-md">update</button>
+				<button (click)="deleteUser(user.id)" class="mx-3 my-4 px-4 py-2 bg-red-400 text-slate-50 rounded shadow-md">delete</button>
+			</td>	
+			
+		</tr>
+	</tbody>
+</table>

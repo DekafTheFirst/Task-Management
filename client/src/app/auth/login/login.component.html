@@ -1,0 +1,44 @@
+<!-- src/app/auth/login/login.component.html -->
+<div class="container mx-auto mt-11 max-w-xl h-auto bg-white p-7 rounded-lg shadow-2xl my-8 flex items-center justify-center">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+	  <div class="pb-9">
+		<h1 class="text-center font-bold text-4xl text-slate-900">Log in <i class="fa-solid fa-right-to-bracket"></i></h1>
+	  </div>
+	  <div class="mx-6 max-w-xl">
+		<div class="p-3">
+		  <label class="block pb-2 text-xl text-slate-900" for="email">Email <i class="fa-solid fa-envelope"></i></label>
+		  <input
+			type="email"
+			id="email"
+			formControlName="email"
+			placeholder="email"
+			class="rounded-md w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			required
+		  />
+		</div>
+		<div class="p-3">
+		  <label class="block pb-2 text-xl text-slate-900" for="password">Password <i class="fa-solid fa-lock"></i></label>
+		  <input
+			type="password"
+			id="password"
+			formControlName="password"
+			placeholder="password"
+			class="rounded-md w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			required
+		  />
+		</div>
+		<div class="px-3 my-5 max-w-xl">
+		  <button
+			class="rounded-md w-[500px] border-2 text-white bg-slate-900 hover:bg-white hover:border-slate-900 hover:text-slate-900 h-9 p-3 flex items-center justify-center shadow-md"
+			type="submit"
+		  >
+			Submit
+		  </button>
+		</div>
+		<div class="px-3 my-5">
+		  <a (click)="gotoRegister()" class="text-blue-500 hover:text-purple-500 underline">Click here to register</a>
+		</div>
+	  </div>
+	</form>
+  </div>
+  

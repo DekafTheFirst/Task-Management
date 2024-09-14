@@ -1,0 +1,49 @@
+<div class=" w-[600px] border-dashed border-2 p-5 m-8 bg-white border-slate-500 shadow-2xl">
+	<form (ngSubmit)= "onSubmit()">
+	<div><h3 class="font-semibold text-2xl">Update Task</h3></div>
+	<div class="p-5 ">
+		<div class="my-3">
+			<label class="block" for="taskname">Name</label>
+			<input type="text"
+			name="taskname"
+			id="taskname"
+			placeholder="description"
+			[(ngModel)] = "task.taskname"
+			class="rounded-md w-[500px] border-2 border-sky-400 h-9 p-3 cursor-pointer"
+			>
+		</div>
+		<div class="my-3">
+			<label class="block" for="deadline">Deadline</label>
+			<input type="date"
+			name="deadline"
+			id="deadline"
+			placeholder="deadline"
+			[(ngModel)] = "task.deadline"
+			class="rounded-md w-[500px] border-2 border-sky-400 h-9 p-3 cursor-pointer"
+			>
+		</div>
+		<div class="my-3">
+			<label class="block" for="priority">Priority</label>
+			<select name="priority" id="priority" class="rounded-md w-[500px] border-2 border-sky-400 h-12 p-2 cursor-pointer" [(ngModel)] = "task.priority">
+				<option value="HIGH">High</option>
+				<option value="MEDIUM">Medium</option>
+				<option value="LOW">Low</option>
+			</select>
+		</div>
+		<div class="my-3">
+			<label class="block" for="priority">Status</label>
+			<select name="status" id="status" class="rounded-md w-[500px] border-2 border-sky-400 h-12 p-2 cursor-pointer" [(ngModel)] = "task.status">
+				<option value="TODO">Todo</option>
+				<option value="INPROGRESS">Inprogress</option>
+				<option value="COMPLETED">Completed</option>
+			</select>
+		</div>
+	
+		<div class="mt-8">
+			<button class=" border-2 border-solid border-teal-400 hover:bg-teal-200 px-9 py-2 shadow-md" type="submit">submit</button>
+			<button (click)="gotoDashboard(userId)" class=" border-2 border-solid border-orange-400 hover:bg-orange-200 px-9 py-2 shadow-md mx-4" type="submit">Back</button>
+		</div>	
+	</div>
+</form>	
+</div>
+

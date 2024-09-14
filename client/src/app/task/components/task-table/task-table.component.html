@@ -1,0 +1,20 @@
+<table class="p-5 mx-5 shadow-2xl font-[Poppins] border-orange-200 w-6/12 border-solid">
+	<thead class="text-white">
+		<tr>
+			<th class="py-3 bg-orange-800">id</th>
+			<th class="py-3  bg-orange-800">Taskname</th>
+			<th class="py-3  bg-orange-800">deadline</th>
+			<th class="py-3  bg-orange-800">priority</th>
+			<th class="py-3  bg-orange-800">status</th>
+		</tr>
+	</thead>
+	<tbody class="text-orange-900 text-center">
+		<tr *ngFor="let task of tasks" class="bg-orange-300 hover:bg-orange-100 cursor-pointer duration-300">
+			<td class="py-3 px-6">{{task.id}}</td>
+			<td class="py-3 px-6">{{task.taskname}}</td>
+			<td class="py-3 px-6">{{task.deadline}}</td>
+			<td class="py-3 px-6">{{task.priority}}</td>
+			<td class="py-3 px-6">{{task.status}}</td>
+		</tr>
+	</tbody>
+</table>

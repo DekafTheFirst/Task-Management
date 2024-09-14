@@ -1,0 +1,64 @@
+<!-- <app-nav></app-nav> -->
+<div class="">
+	<app-success-modal [isOpen] = "showModal"></app-success-modal>
+<div class="container mx-auto  max-w-xl h-auto bg-white p-7 rounded-lg shadow-2xl my-8 flex items-center justify-center">
+<form (ngSubmit) = "onSubmit()">
+	<div class="pb-9"><h1 class="text-center font-bold text-4xl text-slate-900">Register your account <i class="fa-regular fa-user"></i></h1> </div>
+	<div class="mx-6 max-w-xl">
+		<div class="p-3">
+			<label class="block pb-2 text-xl text-slate-900" for="firstname"> Firstname</label>
+			<input type="text"
+			id="firstname"
+			name="firstname"
+			[(ngModel)] = "user.firstname"
+			placeholder="firstname"
+			class=" rounded-lg w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			/>
+		</div>
+	
+		<div class="p-3">
+			<label class="block pb-2 text-xl text-slate-900" for="lastname"> Lastname</label>
+			<input type="text"
+			id="lastname"
+			name="lastname"
+			[(ngModel)] = "user.lastname"
+			placeholder="lastname"
+			class="rounded-lg w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			
+			/>
+		</div>
+	
+		<div class="p-3">
+			<label class= "block pb-2 text-xl text-slate-900" for="email">Email <i class="fa-solid fa-envelope"></i></label>
+			<input type="email"
+			id="email"
+			name="email"
+			[(ngModel)] = "user.email"
+			placeholder="email"
+			class="rounded-md w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			
+			/>
+		</div>
+		<div class="p-3">
+			<label class="block pb-2 text-xl text-slate-900" for="password"> Password <i class="fa-solid fa-lock"></i></label>
+			<input type="password"
+			id="password"
+			name="password"
+			[(ngModel)] = "user.password"
+			placeholder="password"
+			class="rounded-lg w-[500px] border-2 border-slate-400 h-9 p-3 focus:outline-none focus:border-sky-300"
+			
+			/>
+		</div>
+		<div class="px-3 my-5 max-w-xl">
+			<button class="rounded-md w-[500px] border-2 text-white bg-slate-900 hover:bg-white hover:border-slate-900 hover:text-slate-900 h-9 p-3 flex items-center justify-center shadow-md" type="submit">Create</button>
+		</div>
+		<div class="px-5 my-5">
+			<a (click)="gotoLogin()" class="text-blue-500 hover:text-purple-500 underline">Already have an account? Click here to login</a>
+		</div>
+	</div>
+</form>
+</div>
+</div>
+
+

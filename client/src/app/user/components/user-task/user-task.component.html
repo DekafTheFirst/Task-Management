@@ -1,0 +1,58 @@
+<div class="flex flex-col justify-center gap-4 p-5 max-w-7xl mx-auto">
+	<div class="font[Poppins] flex justify-between">
+		<div class="flex gap-3">
+		
+			<div class="filters flex gap-3">
+				
+				
+			</div>
+		</div>
+
+
+		<button (click)="gotoCreateTask()"
+			class="bg-blue-700 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">+ New Task</button>
+	</div>
+
+	<table class="p-5 border-orange-200 border-solid">
+		<ng-template #tableHeader let-header="header" let-action="action">
+			<th class="p-3 font-medium bg-blue-100 overflow-hidden" (click)="action ? action() : null">
+				{{ header }}
+			</th>
+		</ng-template>
+
+		<!-- Use the template to build the table header -->
+		<thead>
+			<tr>
+				<ng-container *ngTemplateOutlet="tableHeader; context: { header: 'id' }"></ng-container>
+				<ng-container *ngTemplateOutlet="tableHeader; context: { header: 'Title' }"></ng-container>
+				<ng-container *ngTemplateOutlet="tableHeader; context: { header: 'Deadline' }"></ng-container>
+				<ng-container
+					*ngTemplateOutlet="tableHeader; context: { header: 'Priority'}"></ng-container>
+				<ng-container *ngTemplateOutlet="tableHeader; context: { header: 'Status' }"></ng-container>
+				<ng-container *ngTemplateOutlet="tableHeader; context: { header: 'Actions' }"></ng-container>
+			</tr>
+		</thead>
+		<tbody class="text-slate-900 text-center rounded-xl ">
+			<tr *ngFor="let task of tasks" class=" hover:bg-gray-100 cursor-pointer duration-300 "
+				routerLink="/view-task/{{task}}">
+				<td class="p-3">{{task.id}}</td>
+				<td class="p-3">{{task.taskname}}</td>
+				<td class="p-3">{{task.deadline}}</td>
+				<td class="p-3">{{task.priority}}</td>
+				<td class="p-3">{{task.status}}</td>
+
+				<td class="p-3 flex justify-end gap-2 my-auto">
+					<!-- {{task.status}} -->
+					<button (click)=" gotToUpdateTask(task.id); $event.stopPropagation()"
+						class="btn-secondary border-2 flex items-center px-2 py-1 gap-1 ">
+						<mat-icon class="custom-icon ">edit</mat-icon> Update
+					</button>
+					<button (click)="deleteUserTask(task.id)"
+						class="btn-secondary flex items-center px-2 py-1 gap-1">
+						<mat-icon class="custom-icon ">delete</mat-icon> Delete
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
